@@ -4,7 +4,7 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         
-        if(len(nums)>1):
+        if len(nums)>1:
             
             if k>len(nums):
                 k = k % len(nums)
