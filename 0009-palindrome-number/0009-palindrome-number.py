@@ -14,12 +14,3 @@ class Solution:
         if num_str == num_str[::-1]:
             return True
         
-        '''
-        121
-        str     x
-        1       12
-        12      1
-        121     0
-        '''
-        
-        
