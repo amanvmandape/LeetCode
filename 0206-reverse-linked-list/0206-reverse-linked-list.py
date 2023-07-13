@@ -8,7 +8,8 @@ class Solution:
         
         if head == None:
             return head
-        
+        elif head.next == None:
+            return head
         else:
             pre = head
             cur = head.next
