@@ -1,12 +1,14 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         
-        dict = {}
+        pre_num = None
+        
+        nums.sort()
         
         for num in nums:
-            if num not in dict:
-                dict[num] = 1
-            else:
+            if num == pre_num:
                 return True
+            
+            pre_num = num
         
         return False
