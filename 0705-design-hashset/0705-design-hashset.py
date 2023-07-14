@@ -6,7 +6,7 @@
 class MyHashSet:
 
     def __init__(self):
-        self.length = 10
+        self.length = 100
         self.list = [[None]] * self.length
 
     def add(self, key: int) -> None:
@@ -31,8 +31,7 @@ class MyHashSet:
             return False
         
     def _hash(self, key:int):
-        index = key%10
-        # pos = key/10
+        index = key%self.length
         
         return index
         
