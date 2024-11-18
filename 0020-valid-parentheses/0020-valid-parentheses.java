@@ -1,23 +1,20 @@
+import java.util.*;
 class Solution {
     public boolean isValid(String s) {
         
         Stack<Character> stack = new Stack();
         
-        for(char c: s.toCharArray())
+        try
         {
-            if(c=='('||c=='{'||c=='[')
+            for(char c: s.toCharArray())
             {
-                stack.push(c);
-            }
-            else
-            {
-                if(c==')')
+                if(c=='('||c=='{'||c=='[')
                 {
-                    if(stack.size()==0)
-                    {
-                        return false;
-                    }
-                    else
+                    stack.push(c);
+                }
+                else
+                {
+                    if(c==')')
                     {
                         if(stack.peek() == '(')
                         {
@@ -28,15 +25,8 @@ class Solution {
                             return false;
                         }
                     }
-                }
-                
-                else if(c=='}')
-                {
-                    if(stack.size()==0)
-                    {
-                        return false;
-                    }
-                    else
+
+                    else if(c=='}')
                     {
                         if(stack.peek() == '{')
                         {
@@ -47,15 +37,8 @@ class Solution {
                             return false;
                         }
                     }
-                }
-                
-                else if(c==']')
-                {
-                    if(stack.size()==0)
-                    {
-                        return false;
-                    }
-                    else
+
+                    else if(c==']')
                     {
                         if(stack.peek() == '[')
                         {
@@ -68,7 +51,14 @@ class Solution {
                     }
                 }
             }
+            
         }
+        catch(EmptyStackException e)
+        {
+            return false;
+        }
+        
+        
         return stack.isEmpty();
     }
 }
